@@ -1,10 +1,12 @@
-/* App.css */
+body, h1, h2, ul, li, p {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #f0f0f0;
+  
 }
 
 .container {
@@ -18,31 +20,66 @@ body {
 
 h1 {
   text-align: center;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
+  color: #333;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
-ul {
+h2 {
+  color: #333;
+}
+
+.contact-list {
+  margin-top: 20px;
+}
+
+.contact-list ul {
   list-style-type: none;
   padding: 0;
 }
 
-li {
+.contact-list li {
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-strong {
+.search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-bar select {
+  width: 25%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-/* Добавьте стили для кнопки сортировки, если необходимо */
+button:hover {
+  background-color: #c9302c;
+}
