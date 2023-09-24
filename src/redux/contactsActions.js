@@ -17,3 +17,7 @@ export const sortContacts = (sortBy) => ({
   payload: sortBy,
 });
 
+export const searchContact = (searchWord) => ({
+  type: 'SEARCH_CONTACTS',
+  payload: searchWord,
+});

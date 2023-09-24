@@ -1,16 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const ContactList = () => {
-  const contacts = useSelector((state) => state.contacts);
-
+const ContactList = ({contacts}) => {
+    if (!contacts?.length){
+        return 'загрузка...'
+    }
   return (
     <div className="contact-list">
       <ul>
         {contacts.map((contact, index) => (
           <li key={index}>
-            <div>{contact.имя} {contact.фамилия}</div>
-            <div>{contact.телефон}</div>
+            <div>{contact.name} {contact.lastname}</div>
+            <div>{contact.phone}</div>
           </li>
         ))}
       </ul>

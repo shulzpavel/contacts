@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { sortContacts } from '../redux/contactsActions';
+import {searchContact, sortContacts} from '../redux/contactsActions';
 
 const SearchBar = () => {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+      setSearchTerm(e.target.value)
+    dispatch(searchContact(e.target.value))
   };
 
   const handleSortChange = (e) => {
@@ -23,8 +24,8 @@ const SearchBar = () => {
         onChange={handleSearch}
       />
       <select onChange={handleSortChange}>
-        <option value="имя">Сортировать по имени</option>
-        <option value="фамилия">Сортировать по фамилии</option>
+        <option value="name">Сортировать по имени</option>
+        <option value="lastname">Сортировать по фамилии</option>
       </select>
     </div>
   );
