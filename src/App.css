@@ -10,12 +10,32 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 70%; /* Чтобы контейнер растягивался на всю ширину экрана */
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px; /* Уменьшаем внутренний отступ для мобильных устройств */
+  }
+}
+
+/* Медиа-запрос для планшетов и настольных компьютеров (ширина экрана от 769px до 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 80%; /* Уменьшаем максимальную ширину контейнера для планшетов */
+  }
+}
+
+/* Медиа-запрос для больших настольных компьютеров (ширина экрана больше 1024px) */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 600px; /* Восстанавливаем максимальную ширину контейнера для больших экранов */
+  }
 }
 
 h1 {
@@ -28,8 +48,34 @@ h2 {
   color: #333;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px; /* Уменьшаем размер шрифта для мобильных устройств */
+    margin-bottom: 10px; /* Уменьшаем отступ снизу для мобильных устройств */
+  }
+}
+
+/* Медиа-запрос для планшетов и настольных компьютеров (ширина экрана от 769px до 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 36px; /* Увеличиваем размер шрифта для планшетов */
+  }
+}
+
+/* Медиа-запрос для больших настольных компьютеров (ширина экрана больше 1024px) */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 48px; /* Увеличиваем размер шрифта для больших экранов */
+  }
+}
+
+/* Медиа-запросы для заголовка h2 можно добавить аналогичным образом */
+
+
 .contact-list {
   margin-top: 20px;
+  max-width: 70%; /* Чтобы контейнер растягивался на всю ширину экрана */
+  margin: 0 auto;
 }
 
 .contact-list ul {
@@ -48,7 +94,37 @@ h2 {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .contact-list {
+    margin-top: 10px; /* Уменьшаем верхний отступ для мобильных устройств */
+  }
+
+  .contact-list li {
+    padding: 5px; /* Уменьшаем внутренний отступ для мобильных устройств */
+  }
+}
+
+/* Медиа-запрос для планшетов и настольных компьютеров (ширина экрана от 769px до 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-list li {
+    padding: 15px; /* Увеличиваем внутренний отступ для планшетов */
+  }
+}
+
+/* Медиа-запрос для больших настольных компьютеров (ширина экрана больше 1024px) */
+@media (min-width: 1025px) {
+  .contact-list {
+    margin-top: 30px; /* Увеличиваем верхний отступ для больших экранов */
+  }
+
+  .contact-list li {
+    padding: 20px; /* Увеличиваем внутренний отступ для больших экранов */
+  }
+}
+
 .search-bar {
+  max-width: 70%; /* Чтобы контейнер растягивался на всю ширину экрана */
+  margin: 0 auto;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
@@ -63,6 +139,7 @@ h2 {
 }
 
 .search-bar select {
+  margin: 10px;
   width: 25%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -70,16 +147,16 @@ h2 {
 }
 
 button {
-  background-color: #d9534f;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
+  padding: 10px 20px; /* Поля кнопки */
+  background-color: #007bff; /* Цвет фона кнопки */
+  color: #fff; /* Цвет текста кнопки */
+  border: none; /* Убираем границу кнопки */
+  border-radius: 5px; /* Скругление углов кнопки */
+  cursor: pointer; /* Задаем курсор при наведении */
+  transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
 
-button:hover {
-  background-color: #c9302c;
+  /* Если нужно добавить стили для состояния наведения (hover) */
+  &:hover {
+    background-color: #0056b3; /* Новый цвет фона при наведении */
+  }
 }

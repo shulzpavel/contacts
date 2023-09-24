@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {searchContact, sortContacts} from '../redux/contactsActions';
+import {searchContact, sortContacts, addContact} from '../redux/contactsActions';
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -13,6 +13,9 @@ const SearchBar = () => {
 
   const handleSortChange = (e) => {
     dispatch(sortContacts(e.target.value));
+  };
+  const handleAddContact = (e) => {
+    dispatch(addContact(e.target.value));
   };
 
   return (
@@ -27,6 +30,7 @@ const SearchBar = () => {
         <option value="name">Сортировать по имени</option>
         <option value="lastname">Сортировать по фамилии</option>
       </select>
+      <button onClick={handleAddContact}>+</button>
     </div>
   );
 };
