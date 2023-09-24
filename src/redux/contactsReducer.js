@@ -63,7 +63,7 @@ const contactsReducer = (state = initialState, action) => {
         case DELETE_CONTACT:
             return {
                 ...state,
-                contacts: state.contacts.filter((contact) => contact !== action.payload),
+                contacts: state.contacts.filter((contact, index) => index !== action.payload),
             };
         case SORT_CONTACTS:
             return {

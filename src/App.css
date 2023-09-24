@@ -123,24 +123,24 @@ h2 {
 }
 
 .search-bar {
-  max-width: 70%; /* Чтобы контейнер растягивался на всю ширину экрана */
+  max-width: 90%; /* Чтобы контейнер растягивался на всю ширину экрана */
   margin: 0 auto;
   margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 70% 25% auto; /* Задаем три столбца */
+  grid-gap: 10px; /* Расстояние между элементами сетки */
   align-items: center;
 }
 
 .search-bar input[type="text"] {
-  width: 70%;
+  width: 100%; 
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .search-bar select {
-  margin: 10px;
-  width: 25%;
+  width: 70%; /* Ширина занимает всю доступную ширину столбца */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -158,5 +158,34 @@ button {
   /* Если нужно добавить стили для состояния наведения (hover) */
   &:hover {
     background-color: #0056b3; /* Новый цвет фона при наведении */
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* 
+   */
+
+   button[type="submit"] {
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста на кнопке */
+    padding: 10px 20px; /* Внутренние отступы кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругляем углы */
+    cursor: pointer; /* Изменяем указатель при наведении */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+  }
+  
+  /* Стили при наведении на кнопку */
+  button[type="submit"]:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
   }
 }

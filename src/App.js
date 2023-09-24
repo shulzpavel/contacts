@@ -12,7 +12,6 @@ function App() {
     <div className="App">
       <h1>Книжка контактов</h1>
       <SearchBar />
-      
       <ContactList contacts={searchWord.length ?searchContact: contacts} />
     </div>
   );
