@@ -16,3 +16,4 @@ export const sortContacts = (sortBy) => ({
   type: SORT_CONTACTS,
   payload: sortBy,
 });
+

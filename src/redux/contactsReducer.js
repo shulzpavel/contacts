@@ -16,9 +16,29 @@ const initialState = {
       "имя": "Алексей",
       "фамилия": "Петров",
       "телефон": "+7 555-555-5555"
+    },
+    {
+      "имя": "Василий",
+      "фамилия": "Васильев",
+      "телефон": "+7 555-555-5556"
+    },
+    {
+      "имя": "Дмитрий",
+      "фамилия": "Дмитриев",
+      "телефон": "+7 555-555-5565"
+    },
+    {
+      "имя": "Гавриил",
+      "фамилия": "Гавриилов",
+      "телефон": "+7 555-555-5545"
+    },
+    {
+      "имя": "Константин",
+      "фамилия": "Констатнтинов",
+      "телефон": "+7 555-555-5535"
     }
   ],
-  sortBy: 'имя',
+  sortedContacts: [],
 };
 
 const contactsReducer = (state = initialState, action) => {
@@ -34,9 +54,13 @@ const contactsReducer = (state = initialState, action) => {
         contacts: state.contacts.filter((contact) => contact !== action.payload),
       };
     case SORT_CONTACTS:
+      const sortBy = action.payload;
+      const sortedContacts = [...state.contacts].sort((a, b) =>
+        a[sortBy].localeCompare(b[sortBy])
+      );
       return {
         ...state,
-        sortBy: action.payload,
+        sortedContacts,
       };
     default:
       return state;
@@ -44,3 +68,7 @@ const contactsReducer = (state = initialState, action) => {
 };
 
 export default contactsReducer;
+
+
+
+
