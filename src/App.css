@@ -97,6 +97,8 @@ h2 {
 @media (max-width: 768px) {
   .contact-list {
     margin-top: 10px; /* Уменьшаем верхний отступ для мобильных устройств */
+    justify-content: space-around;
+    align-items: end;
   }
 
   .contact-list li {
@@ -123,42 +125,49 @@ h2 {
 }
 
 .search-bar {
-  max-width: 90%; /* Чтобы контейнер растягивался на всю ширину экрана */
+  max-width: 90%;
   margin: 0 auto;
   margin-bottom: 20px;
   display: grid;
-  grid-template-columns: 70% 25% auto; /* Задаем три столбца */
-  grid-gap: 10px; /* Расстояние между элементами сетки */
+  grid-gap: 10px;
   align-items: center;
+
+  /* Добавляем медиа-запрос для мобильных устройств с максимальной шириной экрана 768px */
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
+  }
 }
 
-.search-bar input[type="text"] {
-  width: 100%; 
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
+.search-bar input[type="text"],
 .search-bar select {
-  width: 70%; /* Ширина занимает всю доступную ширину столбца */
+  width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-bottom: 10px; /* Добавляем немного отступа между элементами на мобильных устройствах */
 }
 
 button {
-  padding: 10px 20px; /* Поля кнопки */
-  background-color: #007bff; /* Цвет фона кнопки */
-  color: #fff; /* Цвет текста кнопки */
-  border: none; /* Убираем границу кнопки */
-  border-radius: 5px; /* Скругление углов кнопки */
-  cursor: pointer; /* Задаем курсор при наведении */
-  transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 150px;
+  margin: 0 auto;
 
-  /* Если нужно добавить стили для состояния наведения (hover) */
   &:hover {
-    background-color: #0056b3; /* Новый цвет фона при наведении */
+    background-color: #0056b3;
   }
+
+  /* Добавляем медиа-запрос для мобильных устройств с максимальной шириной экрана 768px */
+  @media (max-width: 768px) {
+    width: 150px;
+    margin: 0 auto; /* Кнопка занимает всю ширину */
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -182,6 +191,8 @@ button {
     border-radius: 5px; /* Закругляем углы */
     cursor: pointer; /* Изменяем указатель при наведении */
     transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+    width: 150px;
+    margin: 0 auto;
   }
   
   /* Стили при наведении на кнопку */

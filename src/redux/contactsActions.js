@@ -7,9 +7,9 @@ export const addContact = (contact) => ({
   payload: contact,
 });
 
-export const deleteContact = (contactId) => ({
+export const deleteContact = (contactIndex) => ({
   type: DELETE_CONTACT,
-  payload: contactId,
+  payload: contactIndex,
 });
 
 export const sortContacts = (sortBy) => ({
